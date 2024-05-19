@@ -1,0 +1,52 @@
+
+
+.offcanvas {
+    background-color: rgb(52, 52, 52);
+    * {
+        color: rgb(255, 216, 126);
+    }
+
+    .btn-close {
+        &:hover {
+            background-color: rgb(255, 216, 126);
+            color: rgb(52, 52, 52);
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+router-link {
+    color: var(--light);
+    &:focus,
+    &:hover,
+    &:active {
+        color: var(--primary);
+    }
+}
+
+.img-wrapper {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 100px;
+        object-fit: cover;
+    }
+
+}
+@media (max-width: 768px) {
+   .img-wrapper {
+       width: 50px;
+       height: 50px;
+       img {
+           width: 50px;
+       }
+   }
+}

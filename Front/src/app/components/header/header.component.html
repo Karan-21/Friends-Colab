@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg  sticky-top">
+    <div class="container-fluid">
+        <router-link routerLinkActive="router-link-active" class="navbar-brand" [routerLink]="['/']"><i
+                class="bi bi-kanban-fill"></i> Colab</router-link>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" *ngIf="!islogged">
+                    <router-link class="nav-link" [routerLink]="['/login']">
+                        Login
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </router-link>
+                </li>
+                <li class=" nav-item" *ngIf="!islogged">
+                    <router-link class="nav-link" [routerLink]="['/register']">Register
+                        <i class="bi bi-person-plus-fill"></i>
+                    </router-link>
+                </li>
+                <li class=" nav-item" *ngIf="islogged">
+                    <a class="nav-link" (click)="logout()">logout
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </li>
+
+                <li class=" nav-item" *ngIf="islogged">
+                    <router-link class="nav-link" [routerLink]="['/mytasks']">My Tasks
+                        <i class="bi bi-card-checklist"></i>
+                    </router-link>
+                </li>
+
+                <li class=" nav-item" *ngIf="islogged">
+                    <router-link class="nav-link" [routerLink]="['/invitations']">Invitations
+                        <i class="bi bi-envelope-fill"></i>
+                    </router-link>
+                </li>
+
+                <li class=" nav-item" *ngIf="islogged">
+                    <router-link class="nav-link" [routerLink]="['/profile']">Profile
+                        <i class="bi bi-person-circle"></i>
+                    </router-link>
+                </li>
+                
+
+            </ul>
+        </div>
+    </div>
+</nav>
